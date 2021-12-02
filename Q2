@@ -1,0 +1,27 @@
+numList = []
+
+f = open("input2")
+for line in f:
+  numList.append(line.split())
+
+# print (numList[1][1])
+# print (numList)
+
+forwardLen = 0
+vertLen = 0
+aim = 0
+
+for i in range(len(numList)):
+    if numList[i][0] == "forward":
+        forwardLen += int(numList[i][1])
+        vertLen += int(numList[i][1]) * aim
+
+    elif numList[i][0] == "up" :
+        aim -= int(numList[i][1])
+
+    elif numList[i][0] == "down":
+        aim += int(numList[i][1])
+
+
+
+print (forwardLen * vertLen)
